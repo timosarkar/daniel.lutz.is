@@ -5,8 +5,12 @@ let title = 'Astro Minimal Starter';
 let description = 'This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support.';
 let permalink = 'https://example.com/';
 ---
-
-<BaseLayout title={title} description={description} permalink={permalink} canonicalURL={Astro.request.canonicalURL.href}>
-    <h1>Astro Minimal Starter</h1>
-    <a href="/blog">Blog</a>
-</BaseLayout>
+<head>
+    <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/main.css')} />
+</head>
+<body>
+    <BaseLayout title={title} description={description} permalink={permalink} canonicalURL={Astro.request.canonicalURL.href}>
+        <h1>Astro Minimal Starter</h1>
+        <a href="/blog">Blog</a>
+    </BaseLayout>   
+ </body>
