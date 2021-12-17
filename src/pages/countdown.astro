@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+let title = 'daniel.lutz.is';
+let description = '';
+let permalink = 'https://example.com/';
+
+var countDownDate = new Date("Jan 1, 2022 1:0:0").getTime();
+
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "Hooray!";
+  }
+}, 1000);
+---
+<head>
+    <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/main.css')} />
+</head>
+<body>
+    <BaseLayout title={title} description={description} permalink={permalink} canonicalURL={Astro.request.canonicalURL.href}>
+      <p class="timer"></p>
+    </BaseLayout>   
+ </body>
