@@ -1,0 +1,10 @@
+FROM ubuntu:18.04
+
+RUN sudo apt-get install update && \
+sudo apt-get udpdate && \
+sudo apt-get install node && \
+sudo apt-get install npm && \
+sudo npm install --global astro && \
+sudo git clone https://github.com/freakyshine/daniel.lutz.is/ /home/page/ && \
+cd /home/page/ && \
+sudo astro build
