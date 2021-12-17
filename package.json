@@ -5,7 +5,7 @@
   "scripts": {
     "start": "astro dev",
     "build": "astro build",
-    "test": "echo todo"
+    "test": "node ./test/index.js"
   },
   "devDependencies": {
     "astro": "^0.21.0"
