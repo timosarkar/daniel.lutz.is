@@ -4,7 +4,8 @@
   "private": false,
   "scripts": {
     "start": "astro dev",
-    "build": "astro build"
+    "build": "astro build",
+    "test": "echo todo"
   },
   "devDependencies": {
     "astro": "^0.21.0"
